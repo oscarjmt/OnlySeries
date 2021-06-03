@@ -41,7 +41,7 @@ public class HelloServlet extends HttpServlet {
 		 	
 		 	 try ( EmbeddedNeo4j greeter = new EmbeddedNeo4j( "bolt://localhost:7687", "neo4j", "AED2021grupo10" ) )
 		        {
-				 	LinkedList<String> myactors = greeter.getAllUsers();
+				 	LinkedList<String> myactors = greeter.getAllUsersNames();
 				 	
 				 	for (int i = 0; i < myactors.size(); i++) {
 				 		 //out.println( "<p>" + myactors.get(i) + "</p>" );

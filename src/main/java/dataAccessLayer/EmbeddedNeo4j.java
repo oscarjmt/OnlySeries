@@ -8,6 +8,8 @@ import org.neo4j.driver.Result;
 import org.neo4j.driver.Session;
 import org.neo4j.driver.Transaction;
 import org.neo4j.driver.TransactionWork;
+import org.neo4j.driver.Value;
+
 import static org.neo4j.driver.Values.parameters;
 
 import java.util.HashMap;
@@ -66,7 +68,7 @@ public class EmbeddedNeo4j implements AutoCloseable{
      * Get all Users
      * @return all Users name
      */
-    public LinkedList<String> getAllUsers()
+    public LinkedList<String> getAllUsersNames()
     {
     	try ( Session session = driver.session() )
     	{
@@ -79,7 +81,7 @@ public class EmbeddedNeo4j implements AutoCloseable{
     				LinkedList<String> allUsers = new LinkedList<String>();
     				List<Record> registros = result.list();
     				for (int i = 0; i < registros.size(); i++) {
-    					allUsers.add(registros.get(i).toString());
+    					allUsers.add(registros.get(i).get("user.name").asString());
     				}
 
     				return allUsers;
@@ -93,7 +95,7 @@ public class EmbeddedNeo4j implements AutoCloseable{
      * Get User Node
      * @return all Users name
      */
-    public LinkedList<String> getUser()
+    public LinkedList<String> getUserPassword(String email)
     {
     	try ( Session session = driver.session() )
     	{
@@ -102,11 +104,11 @@ public class EmbeddedNeo4j implements AutoCloseable{
     			@Override
     			public LinkedList<String> execute( Transaction tx )
     			{
-    				Result result = tx.run( "MATCH (user:User) RETURN user.name");
+    				Result result = tx.run("MATCH (user:User {email:'"+email+"'}) RETURN user.password");
     				LinkedList<String> allUsers = new LinkedList<String>();
     				List<Record> registros = result.list();
     				for (int i = 0; i < registros.size(); i++) {
-    					allUsers.add(registros.get(i).toString());
+    					allUsers.add(registros.get(i).get("user.password").asString());
     				}
 
     				return allUsers;
@@ -133,7 +135,8 @@ public class EmbeddedNeo4j implements AutoCloseable{
     				LinkedList<String> myseries = new LinkedList<String>();
     				List<Record> registros = result.list();
     				for (int i = 0; i < registros.size(); i++) {
-    					myseries.add(registros.get(i).toString());
+    					String individualSeries = registros.get(i).get("series.name").asString();
+    					myseries.add(individualSeries);
     				}                    
     				return myseries;
     			}
