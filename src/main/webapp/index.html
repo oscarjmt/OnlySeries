@@ -1,11 +1,131 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap-5.0.1-dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="bootstrap-5.0.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="home-style.css">
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="userlogin.js"></script>
+    <title>Only Series</title>
 </head>
 <body>
-	<a href="/HelloWorld/HelloServlet">Ir al servlet</a>
-	
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1C2434;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="logo2.jpg" alt="" width="200" height="58" class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <form class="d-flex">
+                    <input class="form-control me-2" type="email" placeholder="Ingrese su email" aria-label="email" id="floatingInput">
+                    <button class="btn btn-outline-success" id="sign-in-btn">Recommend</button>
+                </form>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Catalogo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Amigos</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Cuenta
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="right: 0; left: auto;">
+                            <li><a class="dropdown-item" href="#">Configuracion</a></li>
+                            <li><a class="dropdown-item" href="#">Ayuda</a></li>
+                            <li><a class="dropdown-item" href="#">Cerrar Sesion</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <span class="material-icons">account_circle</span>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container-fluid container-fluid-rows">
+        <div class="row">
+            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+                <div class="series">
+                    <img src="images/chernobyl.jpg" height="300" id="img1">
+                </div>
+            </div>
+            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+                <div class="series">
+                    <img src="images/arrow.jpg" height="300" id="img2">
+                </div>
+            </div>
+            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+                <div class="series">
+                    <img src="images/breakingbad.jpg" height="300" id="img3">
+                </div>
+            </div>
+            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+                <div class="series">
+                    <img src="images/casadepapel.jpg" height="300" id="img4">
+                </div>
+            </div>
+            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+                <div class="series">
+                    <img src="images/theflash.jpg" height="300" id="img5">
+                </div>
+            </div>
+            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+                <div class="series">
+                    <img src="images/thewalkingdead.jpg" height="300" id="img6">
+                </div>
+            </div>
+            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+                <div class="series">
+                    <img src="images/los100.jpg" height="300" id="img7">
+                </div>
+            </div>
+            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+                <div class="series">
+                    <img src="images/grey'sanatomy.jpg" height="300" id="img8">
+                </div>
+            </div>
+            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+                <div class="series">
+                    <img src="images/friends.jpg" height="300" id="img9">
+                </div>
+            </div>
+            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+                <div class="series">
+                    <img src="images/madmen.jpg" height="300" id="img10">
+                </div>
+            </div>
+            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+                <div class="series">
+                    <img src="images/mythbusters.jpg" height="300" id="img11">
+                </div>
+            </div>
+            <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+                <div class="series">
+                    <img src="images/narcos.jpg" height="300" id="img12">
+                </div>
+            </div>
+        </div>
+        <div id="div-listado-actores">
+        
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    
 </body>
 </html>
